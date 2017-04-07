@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Impraise Challenge</string>
+    <string name="ich_main_screen_title">My colleagues</string>
+    <string name="ich_reset">Reset</string>
+    <string name="ich_give_feedback">Give them some feedback</string>
+    <string name="ich_give_feedback_button">Give feedback</string>
+    <string name="ich_no_feedback_given">No feedback given yet</string>
+    <string name="ich_last_feedback">Last feedback you sent:</string>
+    <string name="ich_user_profile">User profile</string>
+    <string name="ich_feedback_given_to">Feedback given to:</string>
 </resources>

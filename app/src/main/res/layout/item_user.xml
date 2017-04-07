@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kazman.impraisechallenge.activity.main.list.UserItemViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:id="@+id/topPanel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.topPanelVisible ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtTopPanelTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_subheader_margin"
+                android:gravity="center_vertical"
+                android:text="@string/ich_give_feedback"
+                tools:layout_editor_absoluteX="0dp" />
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civAvatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/material_avatar_margin"
+            android:src="@{viewModel.avatarUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topPanel"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_avatar_margin"
+            android:text="@{viewModel.userName}"
+            app:layout_constraintStart_toEndOf="@+id/civAvatar"
+            app:layout_constraintTop_toTopOf="@+id/civAvatar"
+            tools:layout_editor_absoluteX="68dp"
+            tools:text="John Doe" />
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_avatar_margin"
+            android:text="@{viewModel.lastInteraction}"
+            app:layout_constraintStart_toEndOf="@+id/civAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/txtName"
+            tools:layout_editor_absoluteX="68dp"
+            tools:text="Last feedback you sent: 4 monts ago" />
+
+        <Button
+            style="@style/FeedbackButton"
+            android:id="@+id/btFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/ich_give_feedback_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtInfo"
+            app:layout_constraintTop_toBottomOf="@+id/civAvatar"
+            android:onClick="@{viewModel.onFeedbackClicked}"
+            tools:layout_editor_absoluteX="68dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
