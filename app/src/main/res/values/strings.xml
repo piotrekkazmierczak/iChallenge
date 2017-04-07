@@ -5,7 +5,9 @@
     <string name="ich_give_feedback">Give them some feedback</string>
     <string name="ich_give_feedback_button">Give feedback</string>
     <string name="ich_no_feedback_given">No feedback given yet</string>
-    <string name="ich_last_feedback">Last feedback you sent:</string>
+    <string name="ich_last_feedback">Last feedback you sent:\u0020</string>
     <string name="ich_user_profile">User profile</string>
-    <string name="ich_feedback_given_to">Feedback given to:</string>
+    <string name="ich_feedback_given_to">Feedback given to:\u0020</string>
+    <string name="ich_no_recent_feedbacks">No recent feedbacks to display</string>
+    <string name="ich_gave_feedback_recently">You gave them feedback recently</string>
 </resources>

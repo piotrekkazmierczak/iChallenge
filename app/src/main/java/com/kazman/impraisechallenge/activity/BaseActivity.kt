@@ -30,7 +30,7 @@ open class BaseActivity<T : ViewModel>: AppCompatActivity() {
         setSupportActionBar(appToolbar)
         if (backButton) {
             appToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp)
-            appToolbar.setNavigationOnClickListener { this@BaseActivity.finish() }
+            appToolbar.setNavigationOnClickListener { this@BaseActivity.supportFinishAfterTransition() }
         }
     }
 }

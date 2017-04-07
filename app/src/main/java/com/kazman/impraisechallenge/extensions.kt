@@ -1,5 +1,6 @@
 package com.kazman.impraisechallenge
 
+import android.text.format.DateUtils
 import android.widget.Toast
 import com.kazman.impraisechallenge.di.Injector
 import java.text.SimpleDateFormat
@@ -20,4 +21,8 @@ fun <T> T.millisToDateString(millis: Long) : String {
     val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
     simpleDateFormat.timeZone = TimeZone.getTimeZone("UTC")
     return simpleDateFormat.format(date)
+}
+
+fun Interaction.getRelativeTimeSpanString(): String {
+    return DateUtils.getRelativeTimeSpanString(this.getTimeInMillis(), System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS).toString()
 }

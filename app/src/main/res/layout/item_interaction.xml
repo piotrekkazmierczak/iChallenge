@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="feedbackInfo"
+            type="String" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/material_single_line_item_height"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_margin="@dimen/material_avatar_margin"
+            android:src="@drawable/ic_send_grey_600_18dp" />
+
+        <TextView
+            style="@style/Body2"
+            android:text="@{feedbackInfo}"
+            tools:text="Last feedback given:" />
+    </LinearLayout>
+</layout>

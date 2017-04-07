@@ -31,9 +31,12 @@ class DetailsViewModel(val user: User) : BaseObservable(), ViewModel {
     fun getUserName() = user.name
 
     @Bindable
-    fun getAdapter() = InteractionAdapter()
+    fun getAdapter() = InteractionAdapter().also { it.addItems(user.last_interactions) }
 
     @Bindable
     fun getFeedbackText() = getString(R.string.ich_feedback_given_to) + user.name
+
+    @Bindable
+    fun isEmptyStateVisible() = user.last_interactions.size == 0
 
 }

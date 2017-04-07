@@ -2,6 +2,7 @@ package com.kazman.impraisechallenge.activity.main
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.transition.Fade
 import android.view.Menu
 import android.view.MenuItem
 import com.kazman.impraisechallenge.R
@@ -17,9 +18,16 @@ class MainFeedActivity : BaseActivity<MainFeedViewModel>() {
         super.onCreate(savedInstanceState)
         viewModel = MainFeedViewModel()
         val binding = DataBindingUtil.setContentView<AcitivtyMainFeedBinding>(this, R.layout.acitivty_main_feed)
+        //setUpWindowAnimations()
         binding.viewModel = viewModel
         setToolbar(binding.toolbarLayout.toolbar)
         viewModel?.onCreate()
+    }
+
+    private fun setUpWindowAnimations() {
+        val fade = Fade(2)
+        fade.duration = 3000
+        window.exitTransition = fade
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

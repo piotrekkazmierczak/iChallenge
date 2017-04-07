@@ -36,8 +36,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
 
-    compile "com.android.support.constraint:constraint-layout:$cl_version"
-
     // di
     compile "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
@@ -68,6 +66,7 @@ dependencies {
     })
     testCompile 'org.mockito:mockito-core:2.7.21'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 repositories {
